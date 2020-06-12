@@ -1,32 +1,15 @@
-body{
-  text-align: center;
-  align-items: center;
 
-}
-
-.side-navbar{
-  position: absolute;
-  height: 100%;
-
-}
-
-.floating-panel{
-  margin: "4%";
-  text-align: left;
-}
-
+/* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
 #map {
-  width: 80%
+  height: 100%;
 }
-
 /* Optional: Makes the sample page fill the window. */
-
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
 #floating-panel {
   position: absolute;
   top: 10px;
@@ -40,7 +23,6 @@ html, body {
   line-height: 30px;
   padding-left: 10px;
 }
-
 #floating-panel {
   background-color: #fff;
   border: 1px solid #999;
