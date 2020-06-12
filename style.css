@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Typo_Round;
-  src: url("fonts/Typo_Round_Regular_Demo.otf");
+  src: url("fonts/Typo_Round_Light_Demo.otf");
 }
 
 
@@ -116,4 +116,15 @@ html, body {
 }
 #map #infowindow-content {
   display: inline;
+}
+
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  background-color: #242222;
+  color: #FFFFFF;
+  font-family: Typo-Round;
 }
