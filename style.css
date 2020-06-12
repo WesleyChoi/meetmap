@@ -4,6 +4,12 @@ body{
 
 }
 
+.side-navbar{
+  position: absolute;
+  height: 100%;
+
+}
+
 .floating-panel{
   margin: "4%";
   text-align: left;
