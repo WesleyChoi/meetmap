@@ -1,5 +1,7 @@
       function initDarkMap() {
         // Styles a map in night mode.
+	document.getElementById('darkmodebtn').style.display = 'none';
+	document.getElementById('lightmodebtn').style.display = 'block';
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.674, lng: -73.945},
           zoom: 12,

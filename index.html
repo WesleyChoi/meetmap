@@ -13,7 +13,8 @@
 	<img src="images/favicon.png"/>
         <h1>meetmap</h1>
         <h2>Same Home Different Hacks 2020</h2>
-	<button onclick="initDarkMap()">Dark Mode</button>
+	<button onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
+	<button onclick="initMap()" style="display: none;" id="lightmodebtn">Light Mode</button>
     </header>
     <div id="floating-panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button>
@@ -37,12 +38,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places">
     <script src="scripts/placeid.js"></script>
-<<<<<<< Updated upstream
-
-    <script src="scripts/app.js"></script>
-=======
     <script src="scripts/app.js"></script>    
->>>>>>> Stashed changes
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=visualization&callback=initMap">
