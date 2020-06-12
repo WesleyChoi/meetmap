@@ -6,13 +6,13 @@ function initMap() {
     center: {lat: 37.775, lng: -122.434},
     mapTypeId: 'satellite'
   });
-
+  /*
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map
-  });
+  });*/
 }
-
+/*
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
 }
@@ -549,4 +549,4 @@ function getPoints() {
     new google.maps.LatLng(37.752986, -122.403112),
     new google.maps.LatLng(37.751266, -122.403355)
   ];
-}
+}*/
