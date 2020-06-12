@@ -13,7 +13,23 @@
       <button onclick="changeRadius()">Change radius</button>
       <button onclick="changeOpacity()">Change opacity</button>
     </div>
+
+    <div style="display: none">
+      <input id="pac-input"
+             class="controls"
+             type="text"
+             placeholder="Enter a location">
+    </div>
     <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name"  class="title"></span><br>
+      <strong>Place ID</strong>: <span id="place-id"></span><br>
+      <span id="place-address"></span>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places">
+    <script src="placeid.js"></script>
+
     <script src="app.js"></script>    
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=visualization&callback=initMap">
