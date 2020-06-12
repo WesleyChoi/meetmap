@@ -1,8 +1,8 @@
 var map, heatmap;
 
 function initDarkMap() {
-  document.getElementById('darkmodebtn').style.display = 'block';
-  document.getElementById('lightmodebtn').style.display = 'none';
+  document.getElementById('darkmodebtn').style.display = 'none';
+  document.getElementById('lightmodebtn').style.display = 'block';
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: {lat: 37.775, lng: -122.434},
