@@ -1,7 +1,7 @@
 body{
   text-align: center;
   align-items: center;
-  
+
 }
 
 .floating-panel{
@@ -10,7 +10,7 @@ body{
 }
 
 #map {
-width: 80%
+  width: 80%
 }
 
 /* Optional: Makes the sample page fill the window. */
