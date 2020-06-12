@@ -3,7 +3,7 @@
 	document.getElementById('darkmodebtn').style.display = 'none';
 	document.getElementById('lightmodebtn').style.display = 'block';
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.674, lng: -73.945},
+          center: {lat: 37.775, lng: -122.434},
           zoom: 12,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
