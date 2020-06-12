@@ -13,7 +13,7 @@ html, body {
 
 @font-face {
   font-family: Typo_Round;
-  src: url("fonts/Typo_Round_Regular_Demo.otf")
+  src: url("fonts/Typo_Round_Regular_Demo.otf");
 }
 
 /*Main Map Style*/
