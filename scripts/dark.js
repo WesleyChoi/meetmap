@@ -1,6 +1,6 @@
 var map, heatmap;
 
-function initMap() {
+function initDarkMap() {
   document.getElementById('darkmodebtn').style.display = 'block';
   document.getElementById('lightmodebtn').style.display = 'none';
   map = new google.maps.Map(document.getElementById('map'), {
@@ -88,6 +88,7 @@ function initMap() {
           ]
   });
   
+  // from placeId
 
   var input = document.getElementById('pac-input');
 
