@@ -4,7 +4,7 @@
 	document.getElementById('lightmodebtn').style.display = 'block';
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 37.775, lng: -122.434},
-          zoom: 12,
+          zoom: 13,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
