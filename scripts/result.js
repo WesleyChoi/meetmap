@@ -2,11 +2,28 @@ var map, heatmap;
 
 function returnMessage() {
 
-    var output = "";
+    var varacc = 0;
+    var i;
 
-    if 
+    for (i=0; i < 441; i++) {
 
-    console.log(output);
+        if () {
+
+    }
+
+    function printMessage() {
+        if (varacc < 700) {
+            output = "The location you inputted is not too busy. Safe to go!";
+        } else if (varacc < 1323) {
+            output = "The location you inputted is slightly busy. Be careful if you choose to go out!";
+        } else if (varacc < 1600) {
+            output = "The location you inputted is quite busy. Please choose another location or stay at home!";
+        } else if (varacc < 2205) {
+            output = "The location you inputted is extremely busy. Please choose another location or stay at home!";
+        }
+
+        console.log(printMessaage);
+    }
 }
 
 
