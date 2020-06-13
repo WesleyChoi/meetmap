@@ -13,6 +13,7 @@ html, body {
   padding: 0;
   font-family: Typo_Round;
   padding: 10px;
+  overflow: hidden;
 }
 
 /*Main Map Style*/
@@ -67,19 +68,19 @@ title h1 {
   outline: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 15px;
-  text-transform: lowercase;
+  font-size: 14px;
+  text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   padding: 5px;
   width: 60px;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
-  margin: 20px;
+  margin: 50px;
 }
 
 .button:hover {
   background-color: #837979;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /*Dark Mode/Light Mode Style*/
