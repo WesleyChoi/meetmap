@@ -30,7 +30,7 @@ html, body {
   z-index: 5;
   background-color: #C2C5CC;
   padding: 5px;
-  border: 1px solid #999;
+  border: 1px solid rgb(223, 218, 218);
   text-align: center;
   font-family: 'Typo_Round';
   line-height: 30px;
@@ -103,6 +103,13 @@ html, body {
   right: 0;
 }
 
+/*Dark Mode/Light Mode Style*/
+
+#dark_light{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
 
 /*Place ID Search Style*/
 
