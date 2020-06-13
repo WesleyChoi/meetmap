@@ -92,65 +92,103 @@ function initDarkMap() {
 
   var input = document.getElementById('pac-input');
 
-    var autocomplete = new google.maps.places.Autocomplete(input);
+  var autocomplete = new google.maps.places.Autocomplete(input);
 
-    autocomplete.bindTo('bounds', map);
+  autocomplete.bindTo('bounds', map);
 
-    // Specify just the place data fields that you need.
-    autocomplete.setFields(['place_id', 'geometry', 'name', 'formatted_address']);
+  // Specify just the place data fields that you need.
+  autocomplete.setFields(['place_id', 'geometry', 'name', 'formatted_address']);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    var infowindow = new google.maps.InfoWindow();
-    var infowindowContent = document.getElementById('infowindow-content');
-    infowindow.setContent(infowindowContent);
+  var infowindow = new google.maps.InfoWindow();
+  var infowindowContent = document.getElementById('infowindow-content');
+  infowindow.setContent(infowindowContent);
 
-    var geocoder = new google.maps.Geocoder;
+  var geocoder = new google.maps.Geocoder;
 
-    var marker = new google.maps.Marker({map: map});
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
+  var marker = new google.maps.Marker({map: map});
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
 
-    autocomplete.addListener('place_changed', function() {
-      infowindow.close();
-      var place = autocomplete.getPlace();
+  autocomplete.addListener('place_changed', function() {
+    infowindow.close();
+    heatmap.setMap(null); // get rid of previous heat map
 
-      if (!place.place_id) {
+    var place = autocomplete.getPlace();
+
+    if (!place.place_id) {
+      return;
+    }
+    geocoder.geocode({'placeId': place.place_id}, function(results, status) {
+      if (status !== 'OK') {
+        window.alert('Geocoder failed due to: ' + status);
         return;
       }
-      geocoder.geocode({'placeId': place.place_id}, function(results, status) {
-        if (status !== 'OK') {
-          window.alert('Geocoder failed due to: ' + status);
-          return;
-        }
 
-        map.setZoom(11);
-        map.setCenter(results[0].geometry.location);
+      map.setZoom(13);
+      map.setCenter(results[0].geometry.location);
+      
 
-        // Set the position of the marker using the place ID and location.
-        marker.setPlace(
-            {placeId: place.place_id, location: results[0].geometry.location});
+      // Set the position of the marker using the place ID and location.
+      marker.setPlace(
+          {placeId: place.place_id, location: results[0].geometry.location});
 
-        marker.setVisible(true);
+      marker.setVisible(true);
 
-        infowindowContent.children['place-name'].textContent = place.name;
-        infowindowContent.children['place-id'].textContent = place.place_id;
-        infowindowContent.children['place-address'].textContent =
-            results[0].formatted_address;
+      infowindowContent.children['place-name'].textContent = place.name;
+      infowindowContent.children['place-id'].textContent = place.place_id;
+      infowindowContent.children['place-address'].textContent =
+        results[0].formatted_address;
 
-        infowindow.open(map, marker);
-      });
+      infowindow.open(map, marker);
+
+      /* GET NEW HEAT MAP */
+      var centreLatLng = results[0].geometry.location;
+
+      // find bounds of grid
+      var resultLatSouth = centreLatLng.lat() - 0.001; // around 100 m south
+      var resultLngWest = centreLatLng.lng() - 0.001; // around 100 m west
+      // we're getting an around 200x200 square, width of each grid cell is:
+      var width = 0.001 / 10;
+
+      // getting 441 points using a grid
+      var i, j; // rows, columns
+      var a = 0;
+      var newPoints = [];
+      for (i = 0; i < 21; i++) {
+          var newLng = resultLngWest + (i * width);
+          for (j = 0; j < 21; j++) {
+              var LatLngLiteral = {lat: resultLatSouth + (j * width), lng: newLng};
+              newPoints[a] = new google.maps.LatLng(LatLngLiteral);
+              ++a;
+          }
+      }
+      console.log(newPoints);
+      heatmap.setData(newPoints);
+      heatmap.setMap(map);
+
+      var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
     });
+  });
 
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map
   });
+  
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
 }
 
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function toggleTraffic() {
+  trafficLayer.setMap(trafficLayer.getMap() ? null : map);
 }
 
 function changeGradient() {
