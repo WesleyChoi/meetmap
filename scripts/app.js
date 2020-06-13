@@ -61,7 +61,7 @@ function initMap() {
 
       infowindow.open(map, marker);
       
-      /* GET NEW HEAT MAP */
+      /* GET NEW HEAT MAP
       var resultCentre = results[0].geometry.location;
 
       // find bounds of grid
@@ -88,7 +88,7 @@ function initMap() {
       var heatmap = new google.maps.visualization.HeatmapLayer({
           data: newPoints
       });
-      heatmap.setMap(map);
+      heatmap.setMap(map);*/
 
     });
   });
