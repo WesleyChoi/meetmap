@@ -34,12 +34,6 @@ html, body {
   line-height: 30px;
   margin: 0 auto;
 }
-#floating-panel {
-  background-color: #C2C5CC;
-  border: 1px solid #999;
-  left: 25%;
-  padding: 5px;
-}
 
 .controls {
   background-color: #C2C5CC;
@@ -63,40 +57,21 @@ html, body {
   border-radius: 20px;
   background-color: #242222;
   border: none;
+  outline: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 18px;
+  text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
   padding: 5px;
   width: 150px;
-  transition: all 0.5s;
+  transition: all ease-in-out 0.5s;
   cursor: pointer;
   margin: 20px;
 }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+.button:hover {
+  background-color: #837979;
 }
 
 /*Dark Mode/Light Mode Style*/
