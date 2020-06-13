@@ -83,14 +83,8 @@ function initMap() {
               ++a;
           }
       }
-      console.log(newPoints);
-
-      var newHeatmap = new google.maps.visualization.HeatmapLayer({
-          data: newPoints,
-          map: map
-      });
-      console.log(newHeatmap);
-      newHeatmap.setMap(map);
+      heatmap.setData(newPoints);
+      heatmap.setMap(map);
     });
   });
 
