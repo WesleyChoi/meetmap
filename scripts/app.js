@@ -62,6 +62,8 @@ function initMap() {
       infowindow.open(map, marker);
       
       /* GET NEW HEAT MAP */
+      heatmap.setMap(null); // get rid of previous heat map
+
       var resultCentre = results[0].geometry.location;
 
       // find bounds of grid
