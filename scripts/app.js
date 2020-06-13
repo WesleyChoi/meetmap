@@ -44,8 +44,9 @@ function initMap() {
           return;
         }
 
-        map.setZoom(11);
+        map.setZoom(13);
         map.setCenter(results[0].geometry.location);
+        getHeatMap();
 
         // Set the position of the marker using the place ID and location.
         marker.setPlace(
