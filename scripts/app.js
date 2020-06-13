@@ -16,7 +16,7 @@ function initMap() {
     autocomplete.bindTo('bounds', map);
 
     // Specify just the place data fields that you need.
-    autocomplete.setFields(['place_id', 'geometry']);
+    autocomplete.setFields(['place_id', 'geometry', 'name', 'formatted_address']);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -54,7 +54,10 @@ function initMap() {
 
         marker.setVisible(true);
 
+        infowindowContent.children['place-name'].textContent = place.name;
         infowindowContent.children['place-id'].textContent = place.place_id;
+        infowindowContent.children['place-address'].textContent =
+            results[0].formatted_address;
 
         infowindow.open(map, marker);
       });
