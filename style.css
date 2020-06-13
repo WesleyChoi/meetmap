@@ -51,12 +51,12 @@ nav {
   width: 40%;
   align-items: center;
   padding: auto;
-  vertical-align: center;
 }
 
 nav ul {
   margin: 0 auto;
   padding: 0;
+  displa
 }
 
 nav ul li {
@@ -91,11 +91,8 @@ nav ul li {
   font-size: 14px;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
-  padding: 20px;
-  width: 80px;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
-  margin: 50px;
 }
 
 .button:hover {
