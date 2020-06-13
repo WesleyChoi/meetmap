@@ -94,10 +94,10 @@ function initMap() {
     });
   });
 
-  /*heatmap = new google.maps.visualization.HeatmapLayer({
+  heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map
-  });*/
+  });
 }
 
 function toggleHeatmap() {
