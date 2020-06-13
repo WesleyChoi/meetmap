@@ -42,7 +42,7 @@ nav {
 nav ul {
   position: relative;
   padding: 0;
-  margin: 20px 0 0 630px;
+  margin: 15px 0 0 630px;
 }
 
 nav ul li {
@@ -101,28 +101,28 @@ nav ul li {
 
 /*Dark Mode/Light Mode Style*/
 
-#dark_light{
-  position: fixed;
-  right: 30px;
-  top: 30px;
-  transition: all ease-in-out 0.5s;
+.darklight{
+  cursor: pointer;
 }
 
-#dark_light:hover{
+.darklight:hover{
   transform: scale(1.1);
 }
 
 #darkmodebtn{
   background-color: #000000;
   color: #FFFFFF;
-  border: 4px;
-  border-radius: 40px;
-  border-color: #837979;
-  text-transform: uppercase;
-  font-family: Typo_Round;
-  font-size: 20px;
-  padding: 10px;
+
+  padding: 5% 10% 5% 10%;
+  border-radius: 50px;
+  border: 2px solid black;
   outline: none;
+  
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 84%;
+
+  transition: all ease-in-out 0.5s;
 }
 
 #lightmodebtn{
