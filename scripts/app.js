@@ -83,6 +83,7 @@ function initMap() {
               ++a;
           }
       }
+      console.log(newPoints);
       heatmap.setData(newPoints);
       heatmap.setMap(map);
     });
