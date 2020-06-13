@@ -26,4 +26,5 @@ function getHeatMap() {
         data: newPoints,
         map: map
     });
+    heatmap.setMap(map);
 }
