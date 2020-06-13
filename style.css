@@ -17,7 +17,8 @@ html, body {
 }
 
 #title {
-  position: fixed;
+  position: absolute;
+  top: 10px;
 }
 
 #title img {
@@ -29,40 +30,25 @@ html, body {
 #title h1 {
   float: right;
   font-size: 56px;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-left: 20px;
 }
 
 nav {
   position: relative;
   top: 0;
-  left: 35%;
-  z-index: 5;
-  background-color: #b6bfd3;
-  padding: 5px;
-  border: 1px solid rgb(223, 218, 218);
-  text-align: center;
-  font-family: 'Typo_Round';
-  line-height: 30px;
-  margin: 0 auto;
-  position: fixed;
-  width: 30%;
-  min-width: 600px;
-  height: auto;
-  align-items: center;
-  padding: auto;
-  display: inline;
 }
 
 nav ul {
-  margin: 0 auto;
-  padding: auto;
+  position: relative;
+  padding: 0;
+  margin: 20px 0 0 630px;
 }
 
 nav ul li {
   list-style-type: none;
-  margin: 4%;
-  float: left;
+  margin: 20px;
+  display: inline-block;
 }
 
 
@@ -74,7 +60,7 @@ nav ul li {
   * element that contains the map. */
 #map {
   height: 80%;
-  top: 15%;
+  top: 0;
 }
 
 .controls {
@@ -95,23 +81,21 @@ nav ul li {
 }
 
 .button {
-  position: relative;
-  border-radius: 20px;
-  background-color: #242222;
-  border: none;
+  padding: 5% 20% 5% 20%;
+  border-radius: 50px;
+  border: 2px solid black;
   outline: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 84%;
+  
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
+  font-size: 84%;
+
   transition: all ease-in-out 0.5s;
   cursor: pointer;
-  padding: 10%;
 }
 
 .button:hover {
-  background-color: #837979;
+  background-color: #dfe2e9;
   transform: scale(1.1);
 }
 
@@ -125,7 +109,7 @@ nav ul li {
 }
 
 #dark_light:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 #darkmodebtn{
