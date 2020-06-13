@@ -12,19 +12,19 @@
     <header>
       <img src="images/favicon.png"/>
       <h1>meetmap</h1>
+  
+      <div id="dark_light">
+        <button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
+        <button class="darklight" onclick="initMap()" style="display: none;" id="lightmodebtn">Light Mode</button>
+      </div>
+
+      <div id="floating-panel">
+        <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
+        <button class="button" onclick="changeGradient()">Change gradient</button>
+        <button class="button" onclick="changeRadius()">Change radius</button>
+        <button class="button" onclick="changeOpacity()">Change opacity</button>
+      </div>
     </header>
-
-    <div id="dark_light">
-      <button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
-      <button class="darklight" onclick="initMap()" style="display: none;" id="lightmodebtn">Light Mode</button>
-    </div>
-
-    <div id="floating-panel">
-      <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button class="button" onclick="changeGradient()">Change gradient</button>
-      <button class="button" onclick="changeRadius()">Change radius</button>
-      <button class="button" onclick="changeOpacity()">Change opacity</button>
-    </div>
 
     <div style="display: relative">
       <input id="pac-input"
