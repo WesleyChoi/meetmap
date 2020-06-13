@@ -21,7 +21,7 @@ html, body {
 /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
 #map {
-  height: 80%;
+  height: 60%;
   padding: 20% 0% 0% 0%;
 }
 
@@ -90,8 +90,8 @@ nav ul li {
   font-size: 14px;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px;
-  width: 60px;
+  padding: 20px;
+  width: 80px;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   margin: 50px;
