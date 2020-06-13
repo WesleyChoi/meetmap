@@ -79,7 +79,8 @@ function initMap() {
       for (i = 0; i < 21; i++) {
           var newLng = resultLngWest + (i * width);
           for (j = 0; j < 21; j++) {
-              newPoints[a] = {lat: resultLatSouth + (j * width), lng: newLng};
+              var latLngLiteral = {lat: resultLatSouth + (j * width), lng: newLng};
+              newPoints[a] = new google.maps.LatLng(latLngLiteral);
               ++a;
           }
       }
