@@ -22,8 +22,8 @@ html, body {
   * element that contains the map. */
 #map {
   height: 40%;
-  width: auto;
-  /*padding: 20% 0% 0% 0%;*/
+  /*width: auto;*/
+  padding: 20% 0% 0% 0%;
 }
 
 title img {
