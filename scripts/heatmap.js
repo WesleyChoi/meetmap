@@ -22,9 +22,8 @@ function getHeatMap() {
         }
     }
 
-    heatmap = new google.maps.visualization.HeatmapLayer({
-        data: newPoints,
-        map: map
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: newPoints
     });
     heatmap.setMap(map);
 }
