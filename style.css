@@ -17,11 +17,11 @@ html, body {
 }
 
 #title{
-  position: relative;
+  position: absolute;
   left: 10px;
   top: 10px;
 }
-
+asdf
 /*Main Map Style*/
 
 /* Always set the map height explicitly to define the size of the div
@@ -33,12 +33,17 @@ html, body {
   top: 0%;
 }
 
-title img {
+#title img {
   float: left;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-title h1 {
+#title h1 {
   float: right;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 nav {
@@ -74,6 +79,7 @@ nav ul li {
 }
 
 .controls {
+  position: relative;
   background-color: white;
   border-radius: 2px;
   border: 1px solid transparent;
