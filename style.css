@@ -56,11 +56,12 @@ nav {
 nav ul {
   margin: 0 auto;
   padding: 0;
-  displa
+  display: inline-block;
 }
 
 nav ul li {
   list-style-type: none;
+  margin: 20px;
 }
 
 .controls {
