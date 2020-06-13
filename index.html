@@ -5,26 +5,26 @@
     <title>meetmap</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <script src="scripts/dark.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
       <img src="images/favicon.png"/>
       <h1>meetmap</h1>
+  
+      <div id="dark_light">
+        <button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
+        <button class="darklight" onclick="initMap()" style="display: none;" id="lightmodebtn">Light Mode</button>
+      </div>
+
+      <div id="floating-panel">
+        <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
+        <button class="button" onclick="changeGradient()">Change gradient</button>
+        <button class="button" onclick="changeRadius()">Change radius</button>
+        <button class="button" onclick="changeOpacity()">Change opacity</button>
+      </div>
     </header>
-
-    <div id="dark_light">
-      <button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
-      <button class="darklight" onclick="initMap()" style="display: none;" id="lightmodebtn">Light Mode</button>
-    </div>
-
-    <div id="floating-panel">
-      <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button class="button" onclick="changeGradient()">Change gradient</button>
-      <button class="button" onclick="changeRadius()">Change radius</button>
-      <button class="button" onclick="changeOpacity()">Change opacity</button>
-    </div>
 
     <div style="display: relative">
       <input id="pac-input"
@@ -44,10 +44,9 @@
     </footer>
 
     <!--SCRIPTS-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places">
-    <script src="scripts/placeid.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places"></script>
     <script src="scripts/app.js"></script>
-
+    <script src="scripts/dark.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=visualization&callback=initMap">
     </script>
