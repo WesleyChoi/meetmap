@@ -76,21 +76,20 @@ function initMap() {
       var i, j; // rows, columns
       var a = 0;
       var newPoints = [];
-      console.log(newPoints);
       for (i = 0; i < 21; i++) {
           var newLng = resultLngWest + (i * width);
-	        console.log(newLng)
           for (j = 0; j < 21; j++) {
               newPoints[a] = {lat: resultLatSouth + (j * width), lng: newLng};
-              console.log(newPoints[a]);
               ++a;
           }
       }
+      console.log(newPoints);
 
       var newHeatmap = new google.maps.visualization.HeatmapLayer({
           data: newPoints,
           map: map
       });
+      console.log(newHeatmap);
       newHeatmap.setMap(map);
     });
   });
