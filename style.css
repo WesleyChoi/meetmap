@@ -129,10 +129,12 @@ nav ul li {
 
 footer{
   position: fixed;
-  left: 0;
+  right: 0;
   bottom: 0;
-  width: 30%;
   background-color: white;
+  color: black;
   padding: 20px;
+  text-align: right;
+  width: 100%;
   font-size: 12px;
 }
