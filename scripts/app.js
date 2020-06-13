@@ -33,6 +33,7 @@ function initMap() {
 
   autocomplete.addListener('place_changed', function() {
     infowindow.close();
+    heatmap.setMap(null); // get rid of previous heat map
     var place = autocomplete.getPlace();
 
     if (!place.place_id) {
@@ -62,7 +63,6 @@ function initMap() {
       infowindow.open(map, marker);
       
       /* GET NEW HEAT MAP */
-      heatmap.setMap(null); // get rid of previous heat map
 
       var resultCentre = results[0].geometry.location;
 
@@ -87,10 +87,10 @@ function initMap() {
           }
       }
   
-      /*var heatmap = new google.maps.visualization.HeatmapLayer({
-          data: newPoints,
-          map: map
-      });*/
+      var newHeatmap = new google.maps.visualization.HeatmapLayer({
+          data: newPoints
+      });
+      newHeatmap.setMap(map);
     });
   });
 
