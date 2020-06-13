@@ -13,7 +13,6 @@ html, body {
   padding: 0;
   font-family: Typo_Round;
   padding: 10px;
-  overflow: hidden;
 }
 
 /*Main Map Style*/
@@ -21,7 +20,7 @@ html, body {
 /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
 #map {
-  height: 700px;
+  height: 80%;
 }
 
 #floating-panel {
@@ -60,11 +59,11 @@ html, body {
   outline: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
   padding: 5px;
-  width: 150px;
+  width: 60px;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   margin: 20px;
