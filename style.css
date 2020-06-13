@@ -43,7 +43,7 @@ title h1 {
 nav {
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 35%;
   z-index: 5;
   background-color: #b6bfd3;
   padding: 5px;
@@ -54,7 +54,7 @@ nav {
   margin: 0 auto;
   position: fixed;
   height: 10%;
-  width: 40%;
+  width: 30%;
   align-items: center;
   padding: auto;
 }
@@ -112,8 +112,33 @@ nav ul li {
 
 #dark_light{
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 30px;
+  top: 30px;
+  transition: all ease-in-out 0.5s;
+}
+
+#dark_light:hover{
+  transform: scale(1.2);
+}
+
+#darkmodebtn{
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 4px;
+  border-color: #837979;
+  text-transform: uppercase;
+  font-family: Typo_Round;
+  font-size: 20px;
+}
+
+#lightmodebtn{
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 4px;
+  border-color: #000000;
+  text-transform: uppercase;
+  font-family: Typo_Round;
+  font-size: 20px;
 }
 
 /*Place ID Search Style*/
@@ -134,12 +159,12 @@ nav ul li {
 
 footer{
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: 5px;
+  bottom: 5px;
   background-color: white;
   color: black;
-  padding: 10px;
   text-align: right;
+  height: 4%;
   width: 100%;
   font-size: 12px;
 }
