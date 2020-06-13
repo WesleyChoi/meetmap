@@ -34,13 +34,17 @@ title h1 {
 
 #floating-panel {
   z-index: 5;
-  background-color: #C2C5CC;
+  background-color: #dcdfe6;
   padding: 5px;
   border: 1px solid rgb(223, 218, 218);
   text-align: center;
   font-family: 'Typo_Round';
   line-height: 30px;
   margin: 0 auto;
+  position: fixed;
+  top: 5px;
+  height: 10%;
+  width: 40%;
 }
 
 .controls {
@@ -49,7 +53,6 @@ title h1 {
   border: 1px solid transparent;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  font-family: Typo_Round;
   font-size: 15px;
   font-weight: 300;
   height: 29px;
