@@ -35,22 +35,28 @@ function initMap() {
     infowindow.close();
     heatmap.setMap(null); // get rid of previous heat map
 
-    /* GET NEW HEAT MAP */
+    /* GET NEW HEAT MAP
 
     var resultCentre = results[0].geometry.location;
+    console.log(resultCentre);
 
     // find bounds of grid
     var resultLatSouth = lat(resultCentre) - 0.001; // around 100 m south
     var resultLngWest = lng(resultCentre) - 0.001; // around 100 m west
     // we're getting an around 200x200 square, width of each grid cell is:
     var width = 0.001 / 10; 
+    console.log(resultLatSouth);
+    console.log(resultLngWest);
+    console.log(width);
 
     // getting 441 points using a grid
     var i, j; // rows, columns
     var a = 0;
-    var newPoints;
+    var newPoints = new array();
+    console.log(newPoints);
     for (i = 0; i < 21; i++) {
         var newLng = resultLngWest + (i * width);
+	console.log(newLng)
         for (j = 0; j < 21; j++) {
             newPoints[a] = new google.maps.LatLng({
                 lat: resultLatSouth + (j * width),
@@ -63,7 +69,7 @@ function initMap() {
     var newHeatmap = new google.maps.visualization.HeatmapLayer({
         data: newPoints
     });
-    newHeatmap.setMap(map);
+    newHeatmap.setMap(map);*/
 
     
     var place = autocomplete.getPlace();
