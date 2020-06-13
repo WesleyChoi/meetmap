@@ -21,6 +21,7 @@ html, body {
 /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
 #map {
+  margin-top: 100px;
   height: 80%;
 }
 
@@ -69,6 +70,7 @@ title h1 {
 }
 
 .button {
+  position: relative;
   border-radius: 20px;
   background-color: #242222;
   border: none;
