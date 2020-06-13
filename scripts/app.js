@@ -34,6 +34,38 @@ function initMap() {
   autocomplete.addListener('place_changed', function() {
     infowindow.close();
     heatmap.setMap(null); // get rid of previous heat map
+
+    /* GET NEW HEAT MAP */
+
+    var resultCentre = results[0].geometry.location;
+
+    // find bounds of grid
+    var resultLatSouth = lat(resultCentre) - 0.001; // around 100 m south
+    var resultLngWest = lng(resultCentre) - 0.001; // around 100 m west
+    // we're getting an around 200x200 square, width of each grid cell is:
+    var width = 0.001 / 10; 
+
+    // getting 441 points using a grid
+    var i, j; // rows, columns
+    var a = 0;
+    var newPoints;
+    for (i = 0; i < 21; i++) {
+        var newLng = resultLngWest + (i * width);
+        for (j = 0; j < 21; j++) {
+            newPoints[a] = new google.maps.LatLng({
+                lat: resultLatSouth + (j * width),
+                lng: newLng
+            });
+            ++a;
+        }
+    }
+
+    var newHeatmap = new google.maps.visualization.HeatmapLayer({
+        data: newPoints
+    });
+    newHeatmap.setMap(map);
+
+    
     var place = autocomplete.getPlace();
 
     if (!place.place_id) {
@@ -61,36 +93,6 @@ function initMap() {
         results[0].formatted_address;
 
       infowindow.open(map, marker);
-      
-      /* GET NEW HEAT MAP */
-
-      var resultCentre = results[0].geometry.location;
-
-      // find bounds of grid
-      var resultLatSouth = lat(resultCentre) - 0.001; // around 100 m south
-      var resultLngWest = lng(resultCentre) - 0.001; // around 100 m west
-      // we're getting an around 200x200 square, width of each grid cell is:
-      var width = 0.001 / 10; 
-  
-      // getting 441 points using a grid
-      var i, j; // rows, columns
-      var a = 0;
-      var newPoints;
-      for (i = 0; i < 21; i++) {
-          var newLng = resultLngWest + (i * width);
-          for (j = 0; j < 21; j++) {
-              newPoints[a] = new google.maps.LatLng({
-                  lat: resultLatSouth + (j * width),
-                  lng: newLng
-              });
-              ++a;
-          }
-      }
-  
-      var newHeatmap = new google.maps.visualization.HeatmapLayer({
-          data: newPoints
-      });
-      newHeatmap.setMap(map);
     });
   });
 
