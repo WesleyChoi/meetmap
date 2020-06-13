@@ -22,17 +22,15 @@ html, body {
 
 #title img {
   float: left;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 50px;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 #title h1 {
   float: right;
-  font-size: 40px;
+  font-size: 56px;
   margin-top: 10px;
   margin-left: 20px;
-  margin-bottom: 50px;
 }
 
 nav {
