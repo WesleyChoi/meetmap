@@ -37,6 +37,21 @@ function initMap() {
 
     var place = autocomplete.getPlace();
 
+    // ajax get request to server in order to run a python script
+    $.ajax({
+      type:'get',
+      url:'./server.py',
+      cache:false,
+      async:'asynchronous',
+      dataType:'json',
+      success: function(data) {
+        console.log(JSON.stringify(data))
+      },
+      error: function(request, status, error) {
+        console.log("Error: " + error)
+      }
+   });
+
     if (!place.place_id) {
       return;
     }
