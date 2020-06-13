@@ -22,6 +22,7 @@ html, body {
   * element that contains the map. */
 #map {
   height: 80%;
+  padding: 20% 0% 0% 0%;
 }
 
 title img {
@@ -32,7 +33,7 @@ title h1 {
   float: right;
 }
 
-#floating-panel {
+nav {
   position: absolute;
   top: 0;
   left: 30%;
@@ -50,6 +51,15 @@ title h1 {
   align-items: center;
   padding: auto;
   vertical-align: center;
+}
+
+nav ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
 }
 
 .controls {
