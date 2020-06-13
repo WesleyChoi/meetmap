@@ -21,7 +21,6 @@ html, body {
 /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
 #map {
-  margin-top: 100px;
   height: 80%;
 }
 
@@ -36,7 +35,7 @@ title h1 {
 #floating-panel {
   position: absolute;
   top: 0;
-  left: 25%;
+  left: 30%;
   z-index: 5;
   background-color: #dcdfe6;
   padding: 5px;
@@ -47,9 +46,10 @@ title h1 {
   margin: 0 auto;
   position: fixed;
   height: 10%;
-  width: 50%;
+  width: 40%;
   align-items: center;
   padding: auto;
+  vertical-align: center;
 }
 
 .controls {
@@ -120,7 +120,7 @@ footer{
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 50%;
+  width: 30%;
   background-color: #242222;
   color: #FFFFFF;
   padding: 20px;
