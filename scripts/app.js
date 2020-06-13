@@ -87,18 +87,17 @@ function initMap() {
           }
       }
   
-      var heatmap = new google.maps.visualization.HeatmapLayer({
-          data: newPoints
-      });
-      heatmap.setMap(map);
-
+      /*var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: newPoints,
+          map: map
+      });*/
     });
   });
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
+  /*heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map
-  });
+  });*/
 }
 
 function toggleHeatmap() {
