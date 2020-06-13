@@ -87,6 +87,9 @@ function initMap() {
       console.log(newPoints);
       heatmap.setData(newPoints);
       heatmap.setMap(map);
+
+      var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
     });
   });
 
@@ -94,6 +97,9 @@ function initMap() {
     data: getPoints(),
     map: map
   });
+  
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
 }
 
 function toggleHeatmap() {
