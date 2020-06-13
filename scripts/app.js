@@ -64,18 +64,13 @@ function initMap() {
       infowindow.open(map, marker);
 
       /* GET NEW HEAT MAP */
-      console.log(results[0].geometry.location);
       var centreLatLng = results[0].geometry.location;
-      console.log(centreLatLng);
 
       // find bounds of grid
       var resultLatSouth = centreLatLng.lat() - 0.001; // around 100 m south
       var resultLngWest = centreLatLng.lng() - 0.001; // around 100 m west
       // we're getting an around 200x200 square, width of each grid cell is:
-      var width = 0.001 / 10; 
-      console.log(resultLatSouth);
-      console.log(resultLngWest);
-      console.log(width);
+      var width = 0.001 / 10;
 
       // getting 441 points using a grid
       var i, j; // rows, columns
