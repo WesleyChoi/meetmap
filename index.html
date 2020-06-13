@@ -10,8 +10,10 @@
 
   <body>
     <header>
-      <img src="images/favicon.png"/>
-      <h1>meetmap</h1>
+      <title>
+        <img src="images/favicon.png"/>
+        <h1>meetmap</h1>
+      </title>
   
       <div id="dark_light">
         <button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button>
@@ -19,8 +21,8 @@
       </div>
 
       <div id="floating-panel">
-        <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
-        <button class="button" onclick="changeGradient()">Change gradient</button>
+        <button class="button" onclick="toggleHeatmap()">Toggle <br>Heatmap</button>
+        <button class="button" onclick="changeGradient()">Change<br>gradient</button>
         <button class="button" onclick="changeRadius()">Change <br>radius</button>
         <button class="button" onclick="changeOpacity()">Change <br>opacity</button>
       </div>

@@ -23,6 +23,14 @@ html, body {
   height: 80%;
 }
 
+title img {
+  float: left;
+}
+
+title h1 {
+  float: right;
+}
+
 #floating-panel {
   z-index: 5;
   background-color: #C2C5CC;
@@ -35,7 +43,7 @@ html, body {
 }
 
 .controls {
-  background-color: #C2C5CC;
+  background-color: white;
   border-radius: 2px;
   border: 1px solid transparent;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -71,6 +79,7 @@ html, body {
 
 .button:hover {
   background-color: #837979;
+  transform: scale(1.2);
 }
 
 /*Dark Mode/Light Mode Style*/
