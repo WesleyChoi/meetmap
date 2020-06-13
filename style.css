@@ -24,9 +24,6 @@ html, body {
 }
 
 #floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
   z-index: 5;
   background-color: #C2C5CC;
   padding: 5px;
@@ -34,7 +31,7 @@ html, body {
   text-align: center;
   font-family: 'Typo_Round';
   line-height: 30px;
-  padding-left: 10px;
+  margin: 0 auto;
 }
 #floating-panel {
   background-color: #C2C5CC;
