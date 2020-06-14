@@ -1,8 +1,6 @@
 var map, heatmap;
 
 function initMap() {
-  document.getElementById('darkmodebtn').style.display = 'block';
-  document.getElementById('lightmodebtn').style.display = 'none';
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: {lat: 37.775, lng: -122.434},
@@ -36,21 +34,6 @@ function initMap() {
     heatmap.setMap(null); // get rid of previous heat map
 
     var place = autocomplete.getPlace();
-
-    // ajax get request to server in order to run a python script
-    $.ajax({
-      type:'get',
-      url:'./server.py',
-      cache:false,
-      async:'asynchronous',
-      dataType:'json',
-      success: function(data) {
-        console.log(JSON.stringify(data))
-      },
-      error: function(request, status, error) {
-        console.log("Error: " + error)
-      }
-   });
 
     if (!place.place_id) {
       return;
@@ -99,12 +82,8 @@ function initMap() {
               ++a;
           }
       }
-      console.log(newPoints);
       heatmap.setData(newPoints);
       heatmap.setMap(map);
-
-      var trafficLayer = new google.maps.TrafficLayer();
-      trafficLayer.setMap(map);
     });
   });
 
@@ -113,12 +92,111 @@ function initMap() {
     map: map
   });
   
-  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
+}
+
+function initLightMap() {
+  document.getElementById('darkmodebtn').style.display = 'block';
+  document.getElementById('lightmodebtn').style.display = 'none';
+
+  map.set('styles', null);
+}
+
+function initDarkMap() {
+  document.getElementById('darkmodebtn').style.display = 'none';
+  document.getElementById('lightmodebtn').style.display = 'block';
+
+  var darkModeStyle = [
+    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+    {
+      featureType: 'administrative.locality',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#d59563'}]
+    },
+    {
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#d59563'}]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [{color: '#263c3f'}]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#6b9a76'}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{color: '#38414e'}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry.stroke',
+      stylers: [{color: '#212a37'}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#9ca5b3'}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry',
+      stylers: [{color: '#746855'}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [{color: '#1f2835'}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#f3d19c'}]
+    },
+    {
+      featureType: 'transit',
+      elementType: 'geometry',
+      stylers: [{color: '#2f3948'}]
+    },
+    {
+      featureType: 'transit.station',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#d59563'}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [{color: '#17263c'}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#515c6d'}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.stroke',
+      stylers: [{color: '#17263c'}]
+    }
+  ]
+
+  map.set('styles', darkModeStyle);
 }
 
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function toggleTraffic() {
+  trafficLayer.setMap(trafficLayer.getMap() ? null: map);
 }
 
 function changeGradient() {
