@@ -107,7 +107,11 @@ function toggleHeatmap() {
 }
 
 function toggleTraffic() {
-  trafficLayer.setMap(isset(trafficLayer) ? null : map);
+  if (trafficLayer != null) {
+    trafficLayer.setMap(null);
+  } else {
+    trafficLayer.setMap(map);
+  }
 }
 
 function changeGradient() {
