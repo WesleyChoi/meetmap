@@ -31,7 +31,7 @@ function initMap() {
 
   autocomplete.addListener('place_changed', function() {
     infowindow.close();
-    heatmap.setMap(null); // get rid of previous heat map
+    //heatmap.setMap(null); // get rid of previous heat map
 
     var place = autocomplete.getPlace();
 
@@ -82,8 +82,8 @@ function initMap() {
               ++a;
           }
       }
-      heatmap.setData(newPoints);
-      heatmap.setMap(map);
+      //heatmap.setData(newPoints);
+      //heatmap.setMap(map);
     });
   });
 

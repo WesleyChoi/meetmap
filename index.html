@@ -21,12 +21,13 @@
 
       <nav>
         <ul>
+          <li><button class="button" onclick="toggleTraffic()">Toggle <br>Traffic</button></li>
           <li><button class="button" onclick="toggleHeatmap()">Toggle <br>Heatmap</button></li>
           <li><button class="button" onclick="changeGradient()">Change<br>gradient</button></li>
           <li><button class="button" onclick="changeRadius()">Change <br>radius</button></li>
           <li><button class="button" onclick="changeOpacity()">Change <br>opacity</button></li>
-          <li><button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark <br>Mode</button></li>
-          <li><button class="darklight" onclick="initLightMap()" style="display: none;" id="lightmodebtn">Light <br>Mode</button></li>
+          <li><button class="darklight" onclick="initDarkMap()" style="display: block;" id="darkmodebtn">Dark Mode</button></li>
+          <li><button class="darklight" onclick="initLightMap()" style="display: none;" id="lightmodebtn">Light Mode</button></li>
         </ul>
       </nav>
     </header>
@@ -55,10 +56,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/dark.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places&callback=initMap">
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=visualization&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6kw5MLW2Zfr8hwEAuTFlUwkW3yxpFXLI&libraries=places,visualization&callback=initMap">
     </script>
   </body>
 </html>
