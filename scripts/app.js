@@ -84,12 +84,8 @@ function initMap() {
               ++a;
           }
       }
-      console.log(newPoints);
       heatmap.setData(newPoints);
       heatmap.setMap(map);
-
-      var trafficLayer = new google.maps.TrafficLayer();
-      trafficLayer.setMap(map);
     });
   });
 
