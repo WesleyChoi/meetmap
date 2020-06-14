@@ -94,7 +94,7 @@ function initMap() {
     map: map
   });
   
-  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
 }
 
